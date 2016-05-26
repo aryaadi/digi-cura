@@ -10,7 +10,7 @@ namespace Avam.DigiCura.Data.Repositories
     public class CategoryRepository : Repository<Category>, ICategoryRepository
     {
         #region ctors
-        protected CategoryRepository() : base(new DigiCuraDbContext())
+        public CategoryRepository() : base(new DigiCuraDbContext())
         {
         }
         #endregion

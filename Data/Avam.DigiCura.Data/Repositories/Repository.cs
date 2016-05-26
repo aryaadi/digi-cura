@@ -6,7 +6,7 @@ using System.Linq.Expressions;
 
 namespace Avam.DigiCura.Data.Repositories
 {
-    public class Repository<T> : IRepository<T>
+    public class Repository<T> : IRepository<T> where T : class
     {
         #region Private Fields
         protected DbContext _dbContext;
@@ -33,12 +33,12 @@ namespace Avam.DigiCura.Data.Repositories
 
         public IQueryable<T> FetchAll()
         {
-            throw new NotImplementedException();
+            return _dbContext.Set<T>();
         }
 
         public T FindById<TInput>(TInput id)
         {
-            throw new NotImplementedException();
+            return _dbContext.Set<T>().Find(id);
         }
 
         public bool Save(IEnumerable<T> entities)
