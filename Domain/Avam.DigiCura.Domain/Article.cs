@@ -1,4 +1,5 @@
-﻿using Avam.DigiCura.Domain.Core;
+﻿using System;
+using Avam.DigiCura.Domain.Core;
 
 namespace Avam.DigiCura.Domain
 {
@@ -8,5 +9,10 @@ namespace Avam.DigiCura.Domain
         public string Description { get; set; }
         public string Url { get; set; }
         public bool IsProcessed { get; set; }
+
+        protected override bool IsNewObject()
+        {
+            return Id == 0;
+        }
     }
 }

@@ -5,6 +5,7 @@ namespace Avam.DigiCura.Domain.Core
     public abstract class BusinessObjectBase
     {
         [NotMapped]
-        public virtual bool IsNew { get; protected set; }
+        public bool IsNew { get { return IsNewObject(); } }
+        protected abstract bool IsNewObject();
     }
 }

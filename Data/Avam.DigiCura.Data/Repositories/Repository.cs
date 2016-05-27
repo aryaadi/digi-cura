@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Avam.DigiCura.Domain.Core;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
@@ -6,7 +7,7 @@ using System.Linq.Expressions;
 
 namespace Avam.DigiCura.Data.Repositories
 {
-    public class Repository<T> : IRepository<T> where T : class
+    public class Repository<T> : IRepository<T> where T : BusinessObjectBase
     {
         #region Private Fields
         protected DbContext _dbContext;
@@ -48,7 +49,10 @@ namespace Avam.DigiCura.Data.Repositories
 
         public bool Save(T entity)
         {
-            throw new NotImplementedException();
+            if (entity.IsNew) _dbContext.Set<T>().Add(entity);
+            if (entity is AuditableBusinessObjectBase)
+                (entity as AuditableBusinessObjectBase).UpdateAuditMembers("bkatoch");
+            return _dbContext.SaveChanges() > 0;
         }
         #endregion
 
