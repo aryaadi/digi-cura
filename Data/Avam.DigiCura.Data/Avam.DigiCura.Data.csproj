@@ -50,9 +50,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DigiCuraDbContext.cs" />
-    <Compile Include="Migrations\201605261203106_Initial V.0.cs" />
-    <Compile Include="Migrations\201605261203106_Initial V.0.Designer.cs">
-      <DependentUpon>201605261203106_Initial V.0.cs</DependentUpon>
+    <Compile Include="Migrations\201605281136440_v1.cs" />
+    <Compile Include="Migrations\201605281136440_v1.Designer.cs">
+      <DependentUpon>201605281136440_v1.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -72,8 +72,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201605261203106_Initial V.0.resx">
-      <DependentUpon>201605261203106_Initial V.0.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201605281136440_v1.resx">
+      <DependentUpon>201605281136440_v1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
