@@ -1,0 +1,32 @@
+﻿@using Avam.DigiCura.NgOne.UI.Models
+@model IEnumerable<CategoryViewModel>
+
+@{ 
+    ViewBag.Title = "Article Categories";
+}
+<h2>@ViewBag.Title</h2>
+<form novalidate action="/category/create">
+    <button class="btn btn-primary pull-right" type="submit">New</button>
+</form>
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr class="bg-primary">
+            <th>Name</th>
+            <th>Description</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td style="width:30%">@item.Name</td>
+                <td style="width:45%">@item.Description</td>
+                <td style="width:25%;text-align:right">
+                    <a href="/Category/Edit/@item.Id" class="btn btn-default btn-xs">Edit</a>
+                    <a href="/Category/Delete/@item.Id" class="btn btn-default btn-xs">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table> 
