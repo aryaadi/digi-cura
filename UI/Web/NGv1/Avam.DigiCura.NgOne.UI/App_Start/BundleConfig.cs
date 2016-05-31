@@ -12,14 +12,15 @@ namespace Avam.DigiCura.NgOne.UI
                         "~/Scripts/jquery-2.2.3.js",
                         "~/Scripts/angular.js",
                         "~/Scripts/angular-route.js",
-                        "~/Scripts/angular-ui/ui-bootstrap-tpls.js",
-                        "~/Scripts/bootstrap.js"));
+                        "~/Scripts/bootstrap.js",
+                        "~/Scripts/angular-ui/ui-bootstrap-tpls.js"
+                        ));
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
-                      "~/Content/ui-bootstrap-csp.css",
+                      
                       "~/Content/site.css"));
 
-
+            //"~/Content/ui-bootstrap-csp.css",
             /*bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
                         "~/Scripts/jquery.validate*"));
 

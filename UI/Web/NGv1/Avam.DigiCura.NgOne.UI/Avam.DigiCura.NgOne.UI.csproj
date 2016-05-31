@@ -219,6 +219,8 @@
     <Content Include="app\category\CategoryCtrl.js" />
     <Content Include="app\category\CategoryDataService.js" />
     <Content Include="app\category\CategoryListCtrl.js" />
+    <Content Include="app\category\confirm-delete.html" />
+    <Content Include="app\category\ConfirmDialogCtrl.js" />
     <Content Include="app\category\RootController.js" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />

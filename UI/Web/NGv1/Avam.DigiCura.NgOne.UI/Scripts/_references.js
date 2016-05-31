@@ -3,6 +3,7 @@
 /// <reference path="../app/category/categoryctrl.js" />
 /// <reference path="../app/category/categorydataservice.js" />
 /// <reference path="../app/category/categorylistctrl.js" />
+/// <reference path="../app/category/confirmdialogctrl.js" />
 /// <reference path="../app/category/rootcontroller.js" />
 /// <reference path="../ng/categories/app.js" />
 /// <reference path="ai.0.22.9-build00167.js" />

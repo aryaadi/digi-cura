@@ -1,6 +1,6 @@
 ﻿angular.module('categoryApp').controller('CategoryListCtrl',
-    ['CategoryDataService', '$location',
-        function (CategoryDataService, $location) {
+    ['CategoryDataService', '$location','$uibModal',
+        function (CategoryDataService, $location, modelDialogSvc) {
             'use strict';
             var vm = this;
             this.title = "Category List";
@@ -15,13 +15,26 @@
                 $location.path('/categories/category/new');
             }
             this.onDelete = function (category) {
-                var id = category.id;
-                CategoryDataService.remove(category.id).then(function (response) {
-                    var idx =
-                    vm.categories.findIndex(function (elem, idx) {
-                        return elem.id === id;
-                    });
-                    vm.categories.splice(idx, 1);
-                })
+                var modalInstance = modelDialogSvc.open({
+                    backdrop: 'static',
+                    templateUrl: '/app/category/confirm-delete.html',
+                    size: 'sm',
+                    controller: 'ConfirmDialogCtrl',
+                    controllerAs : 'vm',
+                    resolve: {
+                        category: category
+                    }
+                });
+                modalInstance.result.then(function (arg) {
+                    var id = category.id;
+                    CategoryDataService.remove(category.id).then(function (response) {
+                        var idx =
+                        vm.categories.findIndex(function (elem, idx) {
+                            return elem.id === id;
+                        });
+                        vm.categories.splice(idx, 1);
+                    })
+                });
             }
+
 }]);

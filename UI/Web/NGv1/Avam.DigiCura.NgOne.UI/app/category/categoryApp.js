@@ -1,4 +1,4 @@
-﻿var categoryApp = angular.module('categoryApp', ['ngRoute']);
+﻿var categoryApp = angular.module('categoryApp', ['ngRoute','ui.bootstrap']);
 
 categoryApp.config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
     $locationProvider.html5Mode(true);
