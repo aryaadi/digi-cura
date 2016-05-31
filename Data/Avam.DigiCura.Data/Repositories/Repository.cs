@@ -29,7 +29,9 @@ namespace Avam.DigiCura.Data.Repositories
 
         public bool Delete(T entity)
         {
-            throw new NotImplementedException();
+            _dbContext.Set<T>().Remove(entity);
+            _dbContext.SaveChanges();
+            return true;
         }
 
         public IQueryable<T> FetchAll()
@@ -47,12 +49,13 @@ namespace Avam.DigiCura.Data.Repositories
             throw new NotImplementedException();
         }
 
-        public bool Save(T entity)
+        public T Save(T entity)
         {
             if (entity.IsNew) _dbContext.Set<T>().Add(entity);
             if (entity is AuditableBusinessObjectBase)
                 (entity as AuditableBusinessObjectBase).UpdateAuditMembers("bkatoch");
-            return _dbContext.SaveChanges() > 0;
+            _dbContext.SaveChanges();
+            return entity;
         }
         #endregion
 

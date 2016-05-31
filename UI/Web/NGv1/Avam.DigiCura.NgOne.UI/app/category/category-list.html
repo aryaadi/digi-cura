@@ -1,6 +1,11 @@
 ﻿<div class="panel panel-primary" >
     <div class="panel-heading">
-        {{vm.title}}
+        <div class="row">
+            <h4 class="col-sm-6">{{vm.title}}</h4>
+            <div class="col-sm-6">
+                <button class="btn btn-default pull-right" ng-click="vm.onNew()">New</button>
+            </div>
+        </div>
     </div>
     <div class="panel-body">
         <table class="table table-responsive table-hover">
@@ -11,7 +16,18 @@
                     <th></th>
                 </tr>
             </thead>
-            <tbody></tbody>
+            <tbody>
+                <tr ng-repeat="item in vm.categories">
+                    <td style="width:30%">{{item.name}}</td>
+                    <td style="width:45%">{{item.description}}</td>
+                    <td style="width:25%;text-align:right">
+                        <button class="btn btn-primary btn-xs" ng-click="vm.onEdit(item)">Edit</button>
+                        <button class="btn btn-danger btn-xs" ng-click="vm.onDelete(item)">Delete</button>
+
+                        <!--<a href="/categories/category/{{item.id}}" class="btn btn-default btn-xs">Edit</a>-->
+                    </td>
+                </tr>
+            </tbody>
         </table>
     </div>
 </div>

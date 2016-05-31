@@ -54,9 +54,9 @@ namespace Avam.DigiCura.NgOne.UI.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             category = category ?? new Category();
             category = Mapper.Map(model, category);
-            if(_repository.Save(category))
-                return RedirectToAction("Index");
-            else
+            //if(_repository.Save(category))
+            //    return RedirectToAction("Index");
+            //else
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
         }
         #endregion

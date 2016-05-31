@@ -214,7 +214,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="app\category\category-list.html" />
+    <Content Include="app\category\category.html" />
     <Content Include="app\category\categoryApp.js" />
+    <Content Include="app\category\CategoryCtrl.js" />
     <Content Include="app\category\CategoryDataService.js" />
     <Content Include="app\category\CategoryListCtrl.js" />
     <Content Include="app\category\RootController.js" />

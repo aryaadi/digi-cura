@@ -1,5 +1,6 @@
 ﻿/// <autosync enabled="true" />
 /// <reference path="../app/category/categoryapp.js" />
+/// <reference path="../app/category/categoryctrl.js" />
 /// <reference path="../app/category/categorydataservice.js" />
 /// <reference path="../app/category/categorylistctrl.js" />
 /// <reference path="../app/category/rootcontroller.js" />

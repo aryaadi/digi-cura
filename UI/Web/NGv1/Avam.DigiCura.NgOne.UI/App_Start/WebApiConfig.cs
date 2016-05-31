@@ -1,4 +1,6 @@
 ﻿using Newtonsoft.Json.Serialization;
+using System.Net.Http.Formatting;
+using System.Net.Http.Headers;
 using System.Web.Http;
 
 namespace Avam.DigiCura.NgOne.UI
@@ -10,8 +12,9 @@ namespace Avam.DigiCura.NgOne.UI
             // Web API configuration and services
             var jsonformatter = config.Formatters.JsonFormatter;
             jsonformatter.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
-
-            // Web API routes
+            config.Formatters.JsonFormatter.SupportedMediaTypes
+                .Add(new MediaTypeHeaderValue("text/plain"));
+            // Web API routest/plain
             config.MapHttpAttributeRoutes();
 
             config.Routes.MapHttpRoute(
