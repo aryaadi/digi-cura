@@ -25,5 +25,10 @@ namespace Avam.DigiCura.NgOne.UI.Controllers
 
             return View();
         }
+
+        public ActionResult Categories()
+        {
+            return View();
+        }
     }
 }

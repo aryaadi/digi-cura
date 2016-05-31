@@ -14,6 +14,11 @@ namespace Avam.DigiCura.NgOne.UI
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
+                name: "categories",
+                url: "categories/{*catchall}",
+                defaults: new { controller = "Home", action = "Categories" });
+
+            routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }

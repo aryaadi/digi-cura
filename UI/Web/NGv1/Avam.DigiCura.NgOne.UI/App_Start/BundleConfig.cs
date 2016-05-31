@@ -11,6 +11,7 @@ namespace Avam.DigiCura.NgOne.UI
             bundles.Add(new ScriptBundle("~/bundles/angular").Include(
                         "~/Scripts/jquery-2.2.3.js",
                         "~/Scripts/angular.js",
+                        "~/Scripts/angular-route.js",
                         "~/Scripts/angular-ui/ui-bootstrap-tpls.js",
                         "~/Scripts/bootstrap.js"));
             bundles.Add(new StyleBundle("~/Content/css").Include(
